@@ -1,0 +1,33 @@
+# 生产环境
+server:
+  port: 8888
+
+spring:
+  application:
+    name: softwareCup
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: xxx
+#    url: jdbc:mysql://127.0.0.1:3306/softwarecup?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&autoReconnect=true&&enabledTLSProtocols=TLSv1.2
+    url: jdbc:mysql://139.196.253.125:3306/softwarecup?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  redis:
+    host: 139.196.253.125
+    port: 6379
+    password: xxx
+
+
+# 开启 MyBatis Plus SQL 日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+xunfei:
+  client:
+    appid: '420740be'
+    apiSecret: 'ZDA1ZmY3MzUyMjI3MmM5MWI0YTZhNmNi'
+    apiKey: 'ff550414bb6f47a426b8f54a609f9cd0'
+    domain: 'generalv3.5'
+    #将你的应用模型信息填写上
+
+
