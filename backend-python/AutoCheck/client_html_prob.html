@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation</title>
+    <style>
+        #conversation {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="abc">请输入文本</label><input type="file" name="" id="file">
+    <button onclick="upload()">确认</button>
+    <div id="myDiv"></div>
+
+    <!-- <div id="userInput">
+        <button onclick="hideConversation()">关闭</button><br>
+
+        <label for="abc">请输入文本</label><input type="number" id="textInput" placeholder="请输入...">
+        <button onclick="sendMessage()">确认</button>
+    </div> -->
+    <script>
+        // 文件上传
+        // 流程:
+        // 1. 客户端将文件数据发送给服务器
+        // 2. 服务器保持上传的文件到服务端
+        // 3. 服务器响应给客户端一个文件访问地址
+        // 键的名称(表单域名称): 服务端要求
+
+
+
+        // 请求方法: Post
+        // 请求表单的格式: 一般为 multipart/form-data
+        // 请求体重必须包含一个键值对,键的名称是服务器要求的名称,值是文件数据
+
+        // HTML中,JS仍然随意获取文件数据,但是可以获取到input元素中,被用户选中的文件数据
+        function upload() {
+            const inp = document.getElementById("file");
+            alert('UPLOAD')
+            if (inp.files.length === 0) {
+                alert("请选择上传文件")
+                return false;
+            }
+            console.log(inp.files.length);
+            // 这里的请求体自己构建比较麻烦,一般使用HTML5里面的formData来构建
+            const formData = new FormData();
+            formData.append("key", inp.files[0]);
+            const url = "http://192.168.31.162:5000/model_upload/";
+            fetch("http://192.168.31.162:5000/model_upload/", {
+                method: "POST",
+                body: formData //自动修改请求头,formdata的默认请求头的格式是 multipart/form-data
+            })
+                // .then(response => response.json()) // 解析 JSON 格式的响应数据
+                // .then(res => { console.log(res) })
+                .then(function (response) {
+                    // When the page is loaded convert it to text
+                    return response.text()
+                })
+                .then(function (html) {
+                    // Initialize the DOM parser
+                    var parser = new DOMParser();
+
+                    // Parse the text
+                    var doc = parser.parseFromString(html, "text/html");
+
+                    // You can now even select part of that html as you would in the regular DOM
+                    // Example:
+                    var img_m = doc.getElementById('my_img');
+                    img_m.src
+                    console.log(doc);
+                })
+                .catch(error => console.error('Error:', error)); // 处理请求错误
+            alert('has fetched')
+            // res 就是服务器返回的结果
+        }
+
+    </script>
+
+</body>
+
+</html>

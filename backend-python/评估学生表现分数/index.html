@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Activity Score Predictor</title>
+</head>
+<body>
+    <h1>Enter User Activity Data</h1>
+    <form id="dataForm">
+        <label for="nevents">Number of Events:</label>
+        <input type="number" id="nevents" name="nevents" required><br>
+
+        <label for="ndays_act">Number of Active Days:</label>
+        <input type="number" id="ndays_act" name="ndays_act" required><br>
+
+        <label for="nplay_video">Number of Videos Played:</label>
+        <input type="number" id="nplay_video" name="nplay_video" required><br>
+
+        <label for="nchapters">Number of Chapters Completed:</label>
+        <input type="number" id="nchapters" name="nchapters" required><br>
+
+        <button type="submit">Predict Score</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = {
+                nevents: +document.getElementById('nevents').value,
+                ndays_act: +document.getElementById('ndays_act').value,
+                nplay_video: +document.getElementById('nplay_video').value,
+                nchapters: +document.getElementById('nchapters').value
+            };
+
+            fetch('http://192.168.31.162:5000/score', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = `Predicted Score: ${data.score}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

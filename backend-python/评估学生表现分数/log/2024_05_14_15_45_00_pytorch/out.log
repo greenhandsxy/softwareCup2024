@@ -1,0 +1,53 @@
+2024-05-14 15:45:00,600 - INFO - 
+Config:
+'add_train': False
+'batch_size': 32
+'continue_flag': ''
+'cur_time': '2024_05_14_15_45_00'
+'debug_mode': False
+'debug_num': 500
+'do_continue_train': False
+'do_figure_save': False
+'do_log_print_to_screen': True
+'do_log_save_to_file': True
+'do_predict': True
+'do_train': True
+'do_train_visualized': False
+'dropout_rate': 0.2
+'epoch': 1000
+'feature_columns': [12, 15, 16, 17, 18]
+'figure_save_path': './figure/'
+'hidden_size': 64
+'input_size': 4
+'label_columns': [12]
+'label_in_feature_index': [0]
+'learning_rate': 0.0001
+'log_save_path': './log/2024_05_14_15_45_00_pytorch/'
+'lstm_layers': 2
+'model_name': 'model_pytorch.pth'
+'model_postfix': {'pytorch': '.pth'
+'keras': '.h5'
+'tensorflow': '.ckpt'}
+'model_save_path': './checkpoint/pytorch/'
+'output_size': 1
+'patience': 50
+'predict_day': 1
+'random_seed': 42
+'shuffle_train_data': True
+'time_step': 14
+'train_data_path': './data/Courses_reconstruct.csv'
+'train_data_rate': 0.95
+'use_cuda': True
+'used_frame': 'pytorch'
+'valid_data_rate': 0.15
+2024-05-14 15:45:01,007 - INFO - Epoch 0/1000
+2024-05-14 15:45:03,886 - INFO - The train loss is 2317.429142. The valid loss is 0.310347.
+2024-05-14 15:45:03,886 - INFO - Epoch 1/1000
+2024-05-14 15:45:06,592 - INFO - The train loss is 0.306853. The valid loss is 0.310185.
+2024-05-14 15:45:06,592 - INFO - Epoch 2/1000
+2024-05-14 15:45:09,491 - INFO - The train loss is 0.306722. The valid loss is 0.310160.
+2024-05-14 15:45:09,491 - INFO - Epoch 3/1000
+2024-05-14 15:45:12,189 - INFO - The train loss is 0.306718. The valid loss is 0.310156.
+2024-05-14 15:45:12,189 - INFO - Epoch 4/1000
+2024-05-14 15:45:15,232 - INFO - The train loss is 0.306721. The valid loss is 0.310162.
+2024-05-14 15:45:15,248 - INFO - Epoch 5/1000

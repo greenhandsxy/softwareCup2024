@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+</head>
+<body>
+    <h1>机器翻译</h1>
+    <label for="modeSelect">选择翻译模式：</label>
+    <select id="modeSelect">
+        <option value="0">英语 -> 汉语</option>
+        <option value="1">汉语 -> 英语</option>
+    </select><br><br>
+    <textarea id="inputText" rows="5" cols="50"></textarea><br><br>
+    <button onclick="translateText()">翻译</button><br><br>
+    <p id="outputText"></p>
+
+    <script>
+        function translateText() {
+            var mode = document.getElementById("modeSelect").value;
+            var text = document.getElementById("inputText").value;
+            var data = {
+                mode: parseInt(mode),  // 转换为整数
+                str: text
+            };
+
+            fetch('http://a929594m76.zicp.fun:80/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("outputText").innerText = data.result;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

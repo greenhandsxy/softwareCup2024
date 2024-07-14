@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传音频文件</title>
+</head>
+<body>
+    <h1>上传音频文件</h1>
+    <input type="file" id="audioFile" accept="audio/*">
+    <button onclick="uploadFile()">上传</button>
+    <div id="response"></div>
+
+    <script>
+        function uploadFile() {
+            var fileInput = document.getElementById('audioFile');
+            var file = fileInput.files[0];
+            if (!file) {
+                document.getElementById('response').innerText = '请先选择一个文件。';
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('file', file);
+
+            fetch('http://192.168.31.162:5000/voice', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应错误');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('response').innerText = '服务器响应: ' + data.message;
+            })
+            .catch(error => {
+                console.error('上传时发生错误:', error);
+                document.getElementById('response').innerText = '上传时发生错误: ' + error.message;
+            });
+        }
+    </script>
+</body>
+</html>

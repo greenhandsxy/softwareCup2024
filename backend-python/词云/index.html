@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>词云生成器</title>
+</head>
+<body>
+    <h1>词云生成器</h1>
+    <!-- 单行输入框，用于输入短消息 -->
+    <input type="text" id="inputText" placeholder="输入文本..."><br><br>
+    <!-- 按钮，用于触发生成词云的函数 -->
+    <button onclick="generateWordCloud()">生成词云</button>
+    <h2>关键词：</h2>
+    <!-- 段落，用于显示返回的关键词 -->
+    <p id="responseData"></p>
+
+    <script>
+        // 生成词云函数
+        function generateWordCloud() {
+            const inputText = document.getElementById('inputText').value;
+            // 检查输入是否为空
+            if (inputText.trim() === '') {
+                alert('请输入一些文本');
+                return;
+            }
+
+            // 发送POST请求到后端
+            fetch('http://192.168.31.162:5000/word_cloud', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: inputText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 只显示返回的 ls_keyword 内容
+                const responseData = document.getElementById('responseData');
+                responseData.textContent = data.ls_keyword.map(keyword => `'${keyword}'`).join(', ');
+            })
+            .catch(error => {
+                console.error('错误:', error);
+            });
+        }
+    </script>
+</body>
+</html>

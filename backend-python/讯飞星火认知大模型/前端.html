@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation</title>
+    <style>
+        #chatLog {
+            white-space: pre-wrap;
+        }
+        #conversation {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 图片点击显示文本框 -->
+    <div id="smartAssistant" style="cursor: pointer;">
+        <img src="ai.png" alt="智能小助手" onclick="showConversation()" width="100px"
+             height="100px">
+    </div>
+
+    <div id="conversation">
+
+        <div id="userInput">
+            <button onclick="hideConversation()">关闭</button><br>
+            <input type="text" id="textInput" placeholder="请输入...">
+            <button onclick="sendMessage()">确认</button>
+        </div>
+        <div id="chatLog"></div>
+    </div>
+
+    <script>
+        // 点击事件，隐藏图片，显示文本框
+        function showConversation() {
+            var conversationDiv = document.getElementById('conversation');
+            var smartAssistantDiv = document.getElementById('smartAssistant');
+
+            conversationDiv.style.display = 'grid';
+            smartAssistantDiv.style.display = 'none';
+        }
+
+        function hideConversation() {
+            var conversationDiv = document.getElementById('conversation');
+            var smartAssistantDiv = document.getElementById('smartAssistant');
+
+            conversationDiv.style.display = 'none';
+            smartAssistantDiv.style.display = 'block';
+        }
+        function processText(text) {
+            text = text.replace(/\*\*/g, '');
+            //text = text.replace(/\\n/g, ' ');
+
+            return text;
+        }
+
+        function sendMessage() {
+            var textInput = document.getElementById('textInput');
+            // 去除字符串的头尾空格
+            var message = textInput.value.trim();
+
+            if (message === '') {
+                alert('请输入有效的文本！');
+                return;
+            }
+
+            // 创建一个 JSON 格式的对象，包含文本数据
+            var jsonData = {
+                "text": message
+            };
+
+            // Send the message to Python backend for processing
+            fetch('http://192.168.31.162:5000/process_text/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            })
+            .then(response => response.json()) // 解析 JSON 格式的响应数据
+            .then(data => {
+                // 在这里处理返回的数据
+                console.log(data); // 可以输出到控制台查看返回的数据结构
+
+                var chatLog = document.getElementById('chatLog');
+                var userMessage = document.createElement('div');
+                var br = document.createElement('br');
+                userMessage.classList.add('user-message');
+                userMessage.textContent = 'your message:' + message;
+                chatLog.appendChild(userMessage);
+
+                var assistantResponse = document.createElement('div');
+                assistantResponse.classList.add('assistant-response');
+                assistantResponse.textContent = 'Answer:' + processText(data["result"]);
+                chatLog.appendChild(assistantResponse);
+                chatLog.appendChild(br);
+                textInput.value = '';
+                textInput.focus();
+            })
+            .catch(error => console.error('Error:', error)); // 处理请求错误
+        }
+    </script>
+</body>
+
+</html>

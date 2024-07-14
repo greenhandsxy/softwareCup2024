@@ -1,0 +1,244 @@
+2024-05-16 16:05:00,045 - INFO - 
+Config:
+'add_train': False
+'batch_size': 32
+'continue_flag': ''
+'cur_time': '2024_05_16_16_05_00'
+'debug_mode': False
+'debug_num': 500
+'do_continue_train': False
+'do_figure_save': False
+'do_log_print_to_screen': True
+'do_log_save_to_file': True
+'do_predict': True
+'do_train': True
+'do_train_visualized': False
+'dropout_rate': 0.2
+'epoch': 100
+'feature_columns': [12, 15, 16, 17, 18]
+'figure_save_path': './figure/'
+'hidden_size': 64
+'input_size': 4
+'label_columns': [12]
+'label_in_feature_index': [0]
+'learning_rate': 0.0001
+'log_save_path': './log/2024_05_16_16_05_00_pytorch/'
+'lstm_layers': 2
+'model_name': 'model_pytorch.pth'
+'model_postfix': {'pytorch': '.pth'
+'keras': '.h5'
+'tensorflow': '.ckpt'}
+'model_save_path': './checkpoint/pytorch/'
+'output_size': 1
+'patience': 50
+'predict_day': 1
+'random_seed': 42
+'shuffle_train_data': True
+'time_step': 14
+'train_data_path': './data/Courses_reconstruct.csv'
+'train_data_rate': 0.95
+'use_cuda': True
+'used_frame': 'pytorch'
+'valid_data_rate': 0.15
+2024-05-16 16:05:00,379 - INFO - Epoch 0/100
+2024-05-16 16:05:04,394 - INFO - The train loss is 161.931623. The valid loss is 0.328005.
+2024-05-16 16:05:04,394 - INFO - Epoch 1/100
+2024-05-16 16:05:07,393 - INFO - The train loss is 0.313839. The valid loss is 0.309977.
+2024-05-16 16:05:07,393 - INFO - Epoch 2/100
+2024-05-16 16:05:10,565 - INFO - The train loss is 0.307133. The valid loss is 0.310349.
+2024-05-16 16:05:10,565 - INFO - Epoch 3/100
+2024-05-16 16:05:13,629 - INFO - The train loss is 0.306891. The valid loss is 0.310318.
+2024-05-16 16:05:13,629 - INFO - Epoch 4/100
+2024-05-16 16:05:17,385 - INFO - The train loss is 0.306925. The valid loss is 0.310348.
+2024-05-16 16:05:17,385 - INFO - Epoch 5/100
+2024-05-16 16:05:20,994 - INFO - The train loss is 0.306939. The valid loss is 0.310343.
+2024-05-16 16:05:20,994 - INFO - Epoch 6/100
+2024-05-16 16:05:24,065 - INFO - The train loss is 0.306904. The valid loss is 0.310326.
+2024-05-16 16:05:24,065 - INFO - Epoch 7/100
+2024-05-16 16:05:27,227 - INFO - The train loss is 0.314180. The valid loss is 0.310365.
+2024-05-16 16:05:27,227 - INFO - Epoch 8/100
+2024-05-16 16:05:31,244 - INFO - The train loss is 0.306936. The valid loss is 0.310344.
+2024-05-16 16:05:31,244 - INFO - Epoch 9/100
+2024-05-16 16:05:35,396 - INFO - The train loss is 0.306868. The valid loss is 0.310168.
+2024-05-16 16:05:35,396 - INFO - Epoch 10/100
+2024-05-16 16:05:38,769 - INFO - The train loss is 0.306695. The valid loss is 0.310128.
+2024-05-16 16:05:38,769 - INFO - Epoch 11/100
+2024-05-16 16:05:42,010 - INFO - The train loss is 0.306658. The valid loss is 0.310092.
+2024-05-16 16:05:42,010 - INFO - Epoch 12/100
+2024-05-16 16:05:45,285 - INFO - The train loss is 0.306599. The valid loss is 0.310063.
+2024-05-16 16:05:45,285 - INFO - Epoch 13/100
+2024-05-16 16:05:48,587 - INFO - The train loss is 0.306547. The valid loss is 0.310046.
+2024-05-16 16:05:48,587 - INFO - Epoch 14/100
+2024-05-16 16:05:51,872 - INFO - The train loss is 0.306577. The valid loss is 0.309956.
+2024-05-16 16:05:51,872 - INFO - Epoch 15/100
+2024-05-16 16:05:55,892 - INFO - The train loss is 0.306458. The valid loss is 0.310058.
+2024-05-16 16:05:55,892 - INFO - Epoch 16/100
+2024-05-16 16:05:59,605 - INFO - The train loss is 0.306710. The valid loss is 0.309858.
+2024-05-16 16:05:59,605 - INFO - Epoch 17/100
+2024-05-16 16:06:02,735 - INFO - The train loss is 0.306384. The valid loss is 0.309795.
+2024-05-16 16:06:02,735 - INFO - Epoch 18/100
+2024-05-16 16:06:06,094 - INFO - The train loss is 0.310805. The valid loss is 0.309969.
+2024-05-16 16:06:06,094 - INFO - Epoch 19/100
+2024-05-16 16:06:10,043 - INFO - The train loss is 0.306473. The valid loss is 0.309988.
+2024-05-16 16:06:10,043 - INFO - Epoch 20/100
+2024-05-16 16:06:13,736 - INFO - The train loss is 0.306877. The valid loss is 0.309993.
+2024-05-16 16:06:13,736 - INFO - Epoch 21/100
+2024-05-16 16:06:16,852 - INFO - The train loss is 0.306403. The valid loss is 0.309830.
+2024-05-16 16:06:16,852 - INFO - Epoch 22/100
+2024-05-16 16:06:20,526 - INFO - The train loss is 0.306343. The valid loss is 0.309803.
+2024-05-16 16:06:20,526 - INFO - Epoch 23/100
+2024-05-16 16:06:24,357 - INFO - The train loss is 0.306767. The valid loss is 0.310335.
+2024-05-16 16:06:24,357 - INFO - Epoch 24/100
+2024-05-16 16:06:27,668 - INFO - The train loss is 0.306669. The valid loss is 0.324965.
+2024-05-16 16:06:27,668 - INFO - Epoch 25/100
+2024-05-16 16:06:31,011 - INFO - The train loss is 0.306411. The valid loss is 0.311071.
+2024-05-16 16:06:31,011 - INFO - Epoch 26/100
+2024-05-16 16:06:34,323 - INFO - The train loss is 0.307756. The valid loss is 0.310110.
+2024-05-16 16:06:34,323 - INFO - Epoch 27/100
+2024-05-16 16:06:38,507 - INFO - The train loss is 0.306441. The valid loss is 0.309627.
+2024-05-16 16:06:38,507 - INFO - Epoch 28/100
+2024-05-16 16:06:42,389 - INFO - The train loss is 0.306375. The valid loss is 0.309852.
+2024-05-16 16:06:42,389 - INFO - Epoch 29/100
+2024-05-16 16:06:46,335 - INFO - The train loss is 0.306445. The valid loss is 0.309885.
+2024-05-16 16:06:46,335 - INFO - Epoch 30/100
+2024-05-16 16:06:50,213 - INFO - The train loss is 0.306387. The valid loss is 0.309778.
+2024-05-16 16:06:50,213 - INFO - Epoch 31/100
+2024-05-16 16:06:54,375 - INFO - The train loss is 0.309561. The valid loss is 0.310333.
+2024-05-16 16:06:54,375 - INFO - Epoch 32/100
+2024-05-16 16:06:57,883 - INFO - The train loss is 0.306798. The valid loss is 0.310121.
+2024-05-16 16:06:57,883 - INFO - Epoch 33/100
+2024-05-16 16:07:01,621 - INFO - The train loss is 0.306409. The valid loss is 0.309787.
+2024-05-16 16:07:01,621 - INFO - Epoch 34/100
+2024-05-16 16:07:05,074 - INFO - The train loss is 0.307114. The valid loss is 0.310274.
+2024-05-16 16:07:05,074 - INFO - Epoch 35/100
+2024-05-16 16:07:08,362 - INFO - The train loss is 0.306756. The valid loss is 0.310140.
+2024-05-16 16:07:08,362 - INFO - Epoch 36/100
+2024-05-16 16:07:12,504 - INFO - The train loss is 0.306660. The valid loss is 0.309989.
+2024-05-16 16:07:12,504 - INFO - Epoch 37/100
+2024-05-16 16:07:16,659 - INFO - The train loss is 0.306404. The valid loss is 0.309683.
+2024-05-16 16:07:16,659 - INFO - Epoch 38/100
+2024-05-16 16:07:20,452 - INFO - The train loss is 0.306190. The valid loss is 0.309866.
+2024-05-16 16:07:20,452 - INFO - Epoch 39/100
+2024-05-16 16:07:23,786 - INFO - The train loss is 0.306463. The valid loss is 0.310378.
+2024-05-16 16:07:23,786 - INFO - Epoch 40/100
+2024-05-16 16:07:27,409 - INFO - The train loss is 0.330734. The valid loss is 0.310225.
+2024-05-16 16:07:27,409 - INFO - Epoch 41/100
+2024-05-16 16:07:31,566 - INFO - The train loss is 0.306617. The valid loss is 0.309912.
+2024-05-16 16:07:31,567 - INFO - Epoch 42/100
+2024-05-16 16:07:35,331 - INFO - The train loss is 0.306372. The valid loss is 0.309894.
+2024-05-16 16:07:35,331 - INFO - Epoch 43/100
+2024-05-16 16:07:38,997 - INFO - The train loss is 0.307802. The valid loss is 0.310019.
+2024-05-16 16:07:38,997 - INFO - Epoch 44/100
+2024-05-16 16:07:43,164 - INFO - The train loss is 0.306504. The valid loss is 0.309922.
+2024-05-16 16:07:43,164 - INFO - Epoch 45/100
+2024-05-16 16:07:47,313 - INFO - The train loss is 0.306257. The valid loss is 0.309712.
+2024-05-16 16:07:47,313 - INFO - Epoch 46/100
+2024-05-16 16:07:51,401 - INFO - The train loss is 0.306253. The valid loss is 0.309734.
+2024-05-16 16:07:51,401 - INFO - Epoch 47/100
+2024-05-16 16:07:55,197 - INFO - The train loss is 0.306038. The valid loss is 0.309489.
+2024-05-16 16:07:55,197 - INFO - Epoch 48/100
+2024-05-16 16:07:58,786 - INFO - The train loss is 0.309285. The valid loss is 0.310256.
+2024-05-16 16:07:58,786 - INFO - Epoch 49/100
+2024-05-16 16:08:02,026 - INFO - The train loss is 0.306613. The valid loss is 0.309970.
+2024-05-16 16:08:02,026 - INFO - Epoch 50/100
+2024-05-16 16:08:05,372 - INFO - The train loss is 0.306281. The valid loss is 0.309612.
+2024-05-16 16:08:05,372 - INFO - Epoch 51/100
+2024-05-16 16:08:09,558 - INFO - The train loss is 0.306160. The valid loss is 0.309347.
+2024-05-16 16:08:09,558 - INFO - Epoch 52/100
+2024-05-16 16:08:13,695 - INFO - The train loss is 0.307806. The valid loss is 0.310244.
+2024-05-16 16:08:13,695 - INFO - Epoch 53/100
+2024-05-16 16:08:17,737 - INFO - The train loss is 0.306693. The valid loss is 0.310036.
+2024-05-16 16:08:17,737 - INFO - Epoch 54/100
+2024-05-16 16:08:21,708 - INFO - The train loss is 0.306347. The valid loss is 0.309952.
+2024-05-16 16:08:21,708 - INFO - Epoch 55/100
+2024-05-16 16:08:25,836 - INFO - The train loss is 0.306015. The valid loss is 0.309832.
+2024-05-16 16:08:25,836 - INFO - Epoch 56/100
+2024-05-16 16:08:29,236 - INFO - The train loss is 0.306269. The valid loss is 0.310061.
+2024-05-16 16:08:29,236 - INFO - Epoch 57/100
+2024-05-16 16:08:33,023 - INFO - The train loss is 0.306297. The valid loss is 0.309823.
+2024-05-16 16:08:33,023 - INFO - Epoch 58/100
+2024-05-16 16:08:36,310 - INFO - The train loss is 0.306536. The valid loss is 0.309883.
+2024-05-16 16:08:36,310 - INFO - Epoch 59/100
+2024-05-16 16:08:39,512 - INFO - The train loss is 0.306345. The valid loss is 0.309690.
+2024-05-16 16:08:39,512 - INFO - Epoch 60/100
+2024-05-16 16:08:43,389 - INFO - The train loss is 0.307034. The valid loss is 0.310318.
+2024-05-16 16:08:43,389 - INFO - Epoch 61/100
+2024-05-16 16:08:47,353 - INFO - The train loss is 0.306668. The valid loss is 0.309958.
+2024-05-16 16:08:47,353 - INFO - Epoch 62/100
+2024-05-16 16:08:50,586 - INFO - The train loss is 0.306515. The valid loss is 0.309913.
+2024-05-16 16:08:50,586 - INFO - Epoch 63/100
+2024-05-16 16:08:53,988 - INFO - The train loss is 0.306380. The valid loss is 0.309801.
+2024-05-16 16:08:53,988 - INFO - Epoch 64/100
+2024-05-16 16:08:57,505 - INFO - The train loss is 0.306335. The valid loss is 0.309781.
+2024-05-16 16:08:57,505 - INFO - Epoch 65/100
+2024-05-16 16:09:00,832 - INFO - The train loss is 0.309187. The valid loss is 0.310060.
+2024-05-16 16:09:00,832 - INFO - Epoch 66/100
+2024-05-16 16:09:03,841 - INFO - The train loss is 0.306382. The valid loss is 0.309655.
+2024-05-16 16:09:03,841 - INFO - Epoch 67/100
+2024-05-16 16:09:07,502 - INFO - The train loss is 0.306602. The valid loss is 0.310179.
+2024-05-16 16:09:07,502 - INFO - Epoch 68/100
+2024-05-16 16:09:11,516 - INFO - The train loss is 0.306446. The valid loss is 0.309701.
+2024-05-16 16:09:11,516 - INFO - Epoch 69/100
+2024-05-16 16:09:15,046 - INFO - The train loss is 0.305971. The valid loss is 0.309434.
+2024-05-16 16:09:15,046 - INFO - Epoch 70/100
+2024-05-16 16:09:18,275 - INFO - The train loss is 0.305639. The valid loss is 0.309051.
+2024-05-16 16:09:18,275 - INFO - Epoch 71/100
+2024-05-16 16:09:21,896 - INFO - The train loss is 0.305664. The valid loss is 0.310079.
+2024-05-16 16:09:21,896 - INFO - Epoch 72/100
+2024-05-16 16:09:26,047 - INFO - The train loss is 0.310974. The valid loss is 0.309952.
+2024-05-16 16:09:26,047 - INFO - Epoch 73/100
+2024-05-16 16:09:29,784 - INFO - The train loss is 0.306286. The valid loss is 0.309818.
+2024-05-16 16:09:29,784 - INFO - Epoch 74/100
+2024-05-16 16:09:33,277 - INFO - The train loss is 0.306207. The valid loss is 0.309612.
+2024-05-16 16:09:33,277 - INFO - Epoch 75/100
+2024-05-16 16:09:37,431 - INFO - The train loss is 0.305582. The valid loss is 0.308741.
+2024-05-16 16:09:37,431 - INFO - Epoch 76/100
+2024-05-16 16:09:40,688 - INFO - The train loss is 0.305612. The valid loss is 0.310329.
+2024-05-16 16:09:40,688 - INFO - Epoch 77/100
+2024-05-16 16:09:43,957 - INFO - The train loss is 0.306104. The valid loss is 0.308579.
+2024-05-16 16:09:43,957 - INFO - Epoch 78/100
+2024-05-16 16:09:47,096 - INFO - The train loss is 0.305926. The valid loss is 0.309675.
+2024-05-16 16:09:47,096 - INFO - Epoch 79/100
+2024-05-16 16:09:50,289 - INFO - The train loss is 0.306560. The valid loss is 0.310121.
+2024-05-16 16:09:50,289 - INFO - Epoch 80/100
+2024-05-16 16:09:53,456 - INFO - The train loss is 0.305961. The valid loss is 0.309766.
+2024-05-16 16:09:53,456 - INFO - Epoch 81/100
+2024-05-16 16:09:57,081 - INFO - The train loss is 0.306362. The valid loss is 0.309440.
+2024-05-16 16:09:57,081 - INFO - Epoch 82/100
+2024-05-16 16:10:00,338 - INFO - The train loss is 0.304940. The valid loss is 0.309320.
+2024-05-16 16:10:00,338 - INFO - Epoch 83/100
+2024-05-16 16:10:03,585 - INFO - The train loss is 0.309388. The valid loss is 0.310305.
+2024-05-16 16:10:03,585 - INFO - Epoch 84/100
+2024-05-16 16:10:06,942 - INFO - The train loss is 0.306838. The valid loss is 0.310237.
+2024-05-16 16:10:06,942 - INFO - Epoch 85/100
+2024-05-16 16:10:10,206 - INFO - The train loss is 0.306706. The valid loss is 0.310099.
+2024-05-16 16:10:10,206 - INFO - Epoch 86/100
+2024-05-16 16:10:14,230 - INFO - The train loss is 0.306501. The valid loss is 0.309952.
+2024-05-16 16:10:14,230 - INFO - Epoch 87/100
+2024-05-16 16:10:18,376 - INFO - The train loss is 0.306820. The valid loss is 0.310058.
+2024-05-16 16:10:18,376 - INFO - Epoch 88/100
+2024-05-16 16:10:22,308 - INFO - The train loss is 0.306340. The valid loss is 0.309687.
+2024-05-16 16:10:22,308 - INFO - Epoch 89/100
+2024-05-16 16:10:26,185 - INFO - The train loss is 0.305955. The valid loss is 0.578653.
+2024-05-16 16:10:26,185 - INFO - Epoch 90/100
+2024-05-16 16:10:29,375 - INFO - The train loss is 0.306232. The valid loss is 0.314686.
+2024-05-16 16:10:29,375 - INFO - Epoch 91/100
+2024-05-16 16:10:32,527 - INFO - The train loss is 0.306348. The valid loss is 0.310011.
+2024-05-16 16:10:32,527 - INFO - Epoch 92/100
+2024-05-16 16:10:35,971 - INFO - The train loss is 0.306290. The valid loss is 0.309255.
+2024-05-16 16:10:35,971 - INFO - Epoch 93/100
+2024-05-16 16:10:39,544 - INFO - The train loss is 0.306368. The valid loss is 0.309727.
+2024-05-16 16:10:39,544 - INFO - Epoch 94/100
+2024-05-16 16:10:43,724 - INFO - The train loss is 0.306116. The valid loss is 0.309263.
+2024-05-16 16:10:43,724 - INFO - Epoch 95/100
+2024-05-16 16:10:47,429 - INFO - The train loss is 0.305653. The valid loss is 0.309624.
+2024-05-16 16:10:47,429 - INFO - Epoch 96/100
+2024-05-16 16:10:51,563 - INFO - The train loss is 0.306680. The valid loss is 0.309866.
+2024-05-16 16:10:51,563 - INFO - Epoch 97/100
+2024-05-16 16:10:54,784 - INFO - The train loss is 0.306046. The valid loss is 0.308410.
+2024-05-16 16:10:54,784 - INFO - Epoch 98/100
+2024-05-16 16:10:58,111 - INFO - The train loss is 0.306508. The valid loss is 0.309551.
+2024-05-16 16:10:58,111 - INFO - Epoch 99/100
+2024-05-16 16:11:02,144 - INFO - The train loss is 0.306677. The valid loss is 0.309798.
+2024-05-16 16:11:04,011 - INFO - The mean squared error of stock ['grade'] is [2.22383837 2.88743631 2.88743631 ... 2.70133221 2.88743631 2.88743631]
+2024-05-16 16:11:04,186 - INFO - The predicted stock grade for the next 1 day(s) is: 0.0

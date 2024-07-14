@@ -1,0 +1,47 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download PPT</title>
+</head>
+<body>
+    <h1>Enter PPT Name to Download</h1>
+    <input type="text" id="pptNameInput" placeholder="Enter PPT name">
+    <button onclick="fetchDownloadLink()">Get Download Link</button>
+    <div id="downloadLinkArea"><!-- 可点击的下载链接将显示在这里 --></div>
+
+    <script>
+        function fetchDownloadLink() {
+            const input = document.getElementById('pptNameInput');
+            const downloadLinkArea = document.getElementById('downloadLinkArea');
+
+            // 发送POST请求到后端获取下载链接
+            fetch('http://192.168.31.162:5000/ppt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `pptName=${encodeURIComponent(input.value)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    // 显示错误信息
+                    downloadLinkArea.innerHTML = `<p>Error: ${data.error}</p>`;
+                } else {
+                    // 创建并显示可点击的下载链接
+                    const linkText = `Download <strong>${input.value}</strong>`;
+                    const linkHTML = `<a href="${data.download_url}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
+                    downloadLinkArea.innerHTML = linkHTML;
+                }
+            })
+            .catch(error => {
+                // 显示网络请求错误信息
+                console.error('Error fetching download link:', error);
+                downloadLinkArea.innerHTML = `<p>Error: Failed to fetch download link.</p>`;
+            });
+        }
+    </script>
+</body>
+</html>
