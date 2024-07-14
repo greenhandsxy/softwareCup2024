@@ -1,0 +1,2 @@
+fer2013_mini_XCEPTION.110-0.65.hdf5下载地址：
+https://github.com/oarriaga/face_classification/tree/master/trained_models/emotion_models
