@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>向Flask发送JSON数据和获取图片</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .button-group button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .result img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>向Flask发送JSON数据和获取图片</h1>
+    <div class="input-group">
+        <label for="open">数值：</label>
+        <input type="text" id="open" name="open" placeholder="输入Open值">
+    </div>
+    <div class="input-group">
+        <label for="mode">mode：</label>
+        <input type="text" id="mode" name="mode" placeholder="输入Mode值">
+    </div>
+    <div class="input-group">
+        <label for="course">课程：</label>
+        <input type="text" id="course" name="course" placeholder="输入Course值">
+    </div>
+    <div class="input-group">
+        <label for="name">学生姓名：</label>
+        <input type="text" id="name" name="name" placeholder="输入姓名">
+    </div>
+    <div class="button-group">
+        <button onclick="sendData()">发送数据</button>
+    </div>
+    <div class="result" id="result"></div>
+    <div class="result" id="imageContainer"></div>
+</div>
+
+<script>
+    async function sendData() {
+        const openInput = document.getElementById('open').value;
+        const modeInput = document.getElementById('mode').value;
+        const courseInput = document.getElementById('course').value;
+        const nameInput = document.getElementById('name').value;
+
+        if (!openInput || !modeInput || !courseInput || !nameInput) {
+            alert('请填写所有值');
+            return;
+        }
+
+        const dateInput = "2015/12/17";
+        const jsonData = {
+            "will_train": false,
+            "add_new": { "date": dateInput, "open": parseFloat(openInput) },
+            "mode": parseInt(modeInput),
+            "courseName": courseInput,
+            "userName": nameInput
+        };
+
+        try {
+            const response = await fetch('http://192.168.31.162:5000/transformer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            });
+
+            if (!response.ok) {
+                const error = await response.json();
+                alert('预测错误: ' + error.error);
+                return;
+            }
+
+            const result = await response.json();
+            document.getElementById('result').innerHTML = '<p>Prediction: ' + result[0].prediction + '</p>';
+            const imageUrl = result[1].url;
+            document.getElementById('imageContainer').innerHTML = '<img src="' + imageUrl + '" alt="Server Image">';
+        } catch (error) {
+            console.error('发生了问题:', error);
+            document.getElementById('result').innerHTML = '<p style="color: red;">发生了问题: ' + error.message + '</p>';
+        }
+    }
+</script>
+
+</body>
+</html>
