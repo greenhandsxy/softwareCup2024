@@ -15,12 +15,14 @@
       <el-tab-pane label="全部" name="all">
         <ul class="course-grid">
           <li v-for="(course, index) in courses" :key="course.id" class="course-item">
-            <img src="../../../src/assets/courses/3.png" height="100" width="120">
             <router-link :to="{ name: 'courseDetail', params: { courseName: course.courseName }}">
-                      <span text="sm">
+              <img :src="require(`../../../src/assets/courses/${(index + 3) % 10}.png`)"  height="100" width="120" style="width: 200px; height: 110px">
+              <br>
+              <span text="sm">
                         {{ course.courseName }}
                       </span>
             </router-link>
+            <br><br>
           </li>
         </ul>
       </el-tab-pane>

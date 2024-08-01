@@ -20,7 +20,7 @@
         v-if="value == 'file'"
         class="upload-demo"
         drag
-        action="http://a929594m76.zicp.fun/voice"
+        action="http://9iq1vp362785.vicp.fun:80/voice"
         multiple
         :before-upload="beforeImageUpload"
         :on-success="handleSuccess"

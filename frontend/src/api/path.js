@@ -22,8 +22,8 @@ const url = {
     // prod: 'https://api.example.com',
     // remoteBaseUrl: 'http://192.168.31.162:5000'
     // remoteBaseUrl: 'http://10.160.106.152:5000'
-    remoteBaseUrl: 'http://a929594m76.zicp.fun:80'
-
+    // remoteBaseUrl: 'http://a929594m76.zicp.fun:80'
+    remoteBaseUrl: 'http://9iq1vp362785.vicp.fun:80'
 }
 
 export default url

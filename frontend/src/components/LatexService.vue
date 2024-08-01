@@ -2,7 +2,7 @@
   <el-upload
       class="upload-demo"
       drag
-      action="http://a929594m76.zicp.fun/latex"
+      action="http://9iq1vp362785.vicp.fun:80/latex"
       multiple
       :before-upload="beforeImageUpload"
       :on-success="handleSuccess"
